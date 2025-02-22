@@ -39,3 +39,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #032c03;
 }
+
+.footer {
+    text-align: center;
+}
