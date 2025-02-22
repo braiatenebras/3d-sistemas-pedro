@@ -6,18 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Cadastro JS</title>
+    <title>Cadastro </title>
 </head>
 
 <body>
     <form>
         <h3>Cadastro</h3>
         <input type="text" placeholder="Login" id="login" required>
-        <input type="password" placeholder="Senha" id="senha" required>
         <input type="email" placeholder="E-mail" id="email" required>
+        <input type="password" placeholder="Senha" id="senha" required>
         <input type="tel" placeholder="Telefone" id="telefone" required>
         <input type="submit" value="Cadastrar" onclick="logar(); return false">
     </form>
+    
+    <footer>
+        
+    </footer>
 
     <script>
         function logar() {
@@ -37,7 +41,7 @@
             }
 
             if (telefone.length < 8 || isNaN(telefone)) {
-                alert("Por favor, insira um telefone válido.");
+                alert("O telefone precisa ter pelo menos 8 digitos.");
                 return;
             }
 
