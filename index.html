@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Cadastro JS</title>
+</head>
+
+<body>
+    <form>
+        <h3>Cadastro</h3>
+        <input type="text" placeholder="Login" id="login" required>
+        <input type="password" placeholder="Senha" id="senha" required>
+        <input type="email" placeholder="E-mail" id="email" required>
+        <input type="tel" placeholder="Telefone" id="telefone" required>
+        <input type="submit" value="Cadastrar" onclick="logar(); return false">
+    </form>
+
+    <script>
+        function logar() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+
+            if (login === "" || senha === "" || email === "" || telefone === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Por favor, insira um e-mail válido.");
+                return;
+            }
+
+            if (telefone.length < 8 || isNaN(telefone)) {
+                alert("Por favor, insira um telefone válido.");
+                return;
+            }
+
+            alert('Cadastro realizado com sucesso!');
+            location.href = "home.html";
+        }
+    </script>
+</body>
+
+</html>
