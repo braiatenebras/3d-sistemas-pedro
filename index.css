@@ -58,12 +58,6 @@ input[type="submit"]:hover {
     background-color: #022033;
 }
 
-.image-container {
-    width: 50%; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-}
 
 .image-container img {
     max-width: 100%; 
@@ -71,7 +65,8 @@ input[type="submit"]:hover {
     width: 1000px;
     border-radius: 8px; 
     background-color: rgb(5, 97, 218);
-    margin-left: -100px;
+    margin-left: -20px;
+    margin-top: 4px;
 
 }
 .form-container h3 { 
@@ -103,7 +98,6 @@ font-family: "Sigmar", serif;
     }
 }
 
-/* Para smartphones */
 @media (max-width: 480px) {
     .container {
         width: 95%;
