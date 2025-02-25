@@ -10,48 +10,49 @@
 </head>
 
 <body>
-    
-    <form>
-        <h3>Cadastro</h3>
-        <input type="text" placeholder="Login" id="login" required>
-        <input type="email" placeholder="E-mail" id="email" required>
-        <input type="password" placeholder="Senha" id="senha" required>
-        <input type="tel" placeholder="Telefone" id="telefone" required>
-        <input type="submit" value="Cadastrar" onclick="logar(); return false">
-    </form>
-
-    <div class="footer">
-        <footer>
-            tentando pensar
-        </footer>
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <h3>Se Cadastre</h3>
+                <input type="text" placeholder="Nome de Usuário" id="login" required>
+                <input type="email" placeholder="E-mail" id="email" required>
+                <input type="password" placeholder="Senha" id="senha" required>
+                <input type="tel" placeholder="Telefone" id="telefone" required>
+                <input type="submit" value="Criar Conta" onclick="logar(); return false">
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="assets/undraw_athletes-training_koqa.svg" alt="Imagem de exemplo">
+        </div>
     </div>
 
-    <script>
-        function logar() {
-            var login = document.getElementById('login').value;
-            var senha = document.getElementById('senha').value;
-            var email = document.getElementById('email').value;
-            var telefone = document.getElementById('telefone').value;
 
-            if (login === "" || senha === "" || email === "" || telefone === "") {
-                alert("Por favor, preencha todos os campos.");
-                return;
+        <script>
+            function logar() {
+                var login = document.getElementById('login').value;
+                var senha = document.getElementById('senha').value;
+                var email = document.getElementById('email').value;
+                var telefone = document.getElementById('telefone').value;
+
+                if (login === "" || senha === "" || email === "" || telefone === "") {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                if (!email.includes("@") || !email.includes(".")) {
+                    alert("insira um e-mail válido. (Precisa possuir o @ e o .)");
+                    return;
+                }
+
+                if (telefone.length < 8 || isNaN(telefone)) {
+                    alert("O telefone precisa ter pelo menos 8 digitos.");
+                    return;
+                }
+
+                alert('Cadastro realizado com sucesso!');
+                location.href = "home.html";
             }
-
-            if (!email.includes("@") || !email.includes(".")) {
-                alert("insira um e-mail válido. (Precisa possuir o @ e o .)");
-                return;
-            }
-
-            if (telefone.length < 8 || isNaN(telefone)) {
-                alert("O telefone precisa ter pelo menos 8 digitos.");
-                return;
-            }
-
-            alert('Cadastro realizado com sucesso!');
-            location.href = "home.html";
-        }
-    </script>
+        </script>
 </body>
 
 </html>
