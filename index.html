@@ -76,7 +76,9 @@
         const analytics = getAnalytics(app);
         set(ref(db, 'usuários/' + login), {
             login: login,
-            senha: senha
+            senha: senha,
+            email: email,
+            telefone: telefone
         })
         then(() => {
             alert('Cadastro realizado com sucesso!');
