@@ -44,7 +44,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-set(ref(d
+set(ref(db, 'usuarios/' + login), {
+    login: login,
+    senha: senha,
+    email: email,
+    telefone: telefone
+})
+then(() => {
+    alert('Cadastro realizado com sucesso!');
+    location.href = "home.html";
+
+})
+    .catch((error) => {
+        console.error("erro ao salvar.", error);
+        Alert("erro ao cadastrar.");
     }
     )
 
